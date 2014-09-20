@@ -1,6 +1,7 @@
 package com.kevinsprong;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class InsertionSort {
 	
@@ -8,9 +9,16 @@ public class InsertionSort {
 		
 	}
 	
+	private static void fillWithRandomInts(int[] array) {
+		Random rnd = new Random();
+		for (int i = 0; i < array.length; i++) {
+			array[i] = rnd.nextInt(array.length*4);
+		}
+	}
 	
 	public static void main(String[] args) {
-		int[] array = {1,4,6,2,5,8,9,25,3,9};
+		int[] array = new int[50];
+		fillWithRandomInts(array);
 		
 		System.out.println(Arrays.toString(array));
 		insertionSort(array);
