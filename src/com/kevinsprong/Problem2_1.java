@@ -68,9 +68,8 @@ public class Problem2_1 {
 		System.out.println(Arrays.toString(array));
 		
 		// now tune value of arraySizeThresh empirically
-		int[] insertionThresh = {1,2,4,8,16,32,64};
-		int[] arraySize = {100, 1000, 10000, 100000, 
-				1000000, 10000000};
+		int[] insertionThresh = {1,2,4,8,16,32,64,218,256,512,1024,2048,4096,8192};
+		int arraySize = 1000000;
 		int nReps = 50;
 		
 		BufferedWriter bw = null;
@@ -80,38 +79,36 @@ public class Problem2_1 {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		bw.write("trial_num,array_size,ins_threshold,time_merge_sec,time_combined_sec");
+		bw.write("ins_threshold,trial_num,time_merge_sec,time_combined_sec");
 		bw.newLine();
 		
-		for (int aSize : arraySize) {
-			for (int thresh : insertionThresh) {
-				arraySizeThresh = thresh;
-				for (int i = 0; i < nReps; i++) {
-					System.out.println(Integer.toString(i) + "," +
-							Integer.toString(aSize) + "," + 
-							Integer.toString(thresh) + ",");
-					
-					// create arrays
-					int[] array1 = new int[aSize];
-					util.fillWithRandomInts(array1);
-					int[] array2 = util.deepCopy(array1);
-				
-					long t0 = System.nanoTime();
-					MergeSort.mergeSort(array1);
-					long t1 = System.nanoTime();
-					combinedSort(array2);
-					long t2 = System.nanoTime();
-					
-					double tMerge = (t1 - t0) / 1e9;
-					double tCom = (t2 - t1) / 1e9;
-					
-					bw.write(Integer.toString(i) + "," +
-							Integer.toString(aSize) + "," + 
-							Integer.toString(thresh) + "," +
-							Double.toString(tMerge) + "," +
-							Double.toString(tCom));
-					bw.newLine();
-				}
+
+		for (int thresh : insertionThresh) {
+			arraySizeThresh = thresh;
+			
+			for (int i = 0; i < nReps; i++) {
+				System.out.println(Integer.toString(thresh) + "," + 
+									Integer.toString(i));
+
+				// create arrays
+				int[] array1 = new int[arraySize];
+				util.fillWithRandomInts(array1);
+				int[] array2 = util.deepCopy(array1);
+
+				long t0 = System.nanoTime();
+				MergeSort.mergeSort(array1);
+				long t1 = System.nanoTime();
+				combinedSort(array2);
+				long t2 = System.nanoTime();
+
+				double tMerge = (t1 - t0) / 1e9;
+				double tCom = (t2 - t1) / 1e9;
+
+				bw.write(Integer.toString(thresh) + "," +
+						Integer.toString(i) + "," +
+						Double.toString(tMerge) + "," +
+						Double.toString(tCom));
+				bw.newLine();
 			}
 		}
 
