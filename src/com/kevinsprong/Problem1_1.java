@@ -2,7 +2,7 @@ package com.kevinsprong;
 
 import java.util.Arrays;
 
-public class ProblemsChapter1 {
+public class Problem1_1 {
 	// assume each operation takes f(n) microseconds
 	// find number of operations in each time window
 	
