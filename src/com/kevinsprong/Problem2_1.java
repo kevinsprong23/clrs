@@ -68,9 +68,9 @@ public class Problem2_1 {
 		System.out.println(Arrays.toString(array));
 		
 		// now tune value of arraySizeThresh empirically
-		int[] insertionThresh = {1,2,4,8,16,32,64,128,256,512,1024};
+		int[] insertionThresh = {1,2,5,10,25,50,75,100,200,300,400,500,600,700,800,900,1000};
 		int arraySize = 1000000;
-		int nReps = 50;
+		int nReps = 100;
 		
 		BufferedWriter bw = null;
 		try {
