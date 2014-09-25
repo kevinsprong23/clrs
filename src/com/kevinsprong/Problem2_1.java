@@ -111,6 +111,8 @@ public class Problem2_1 {
 				bw.newLine();
 			}
 		}
+		
+		bw.close();
 
 	}
 }
