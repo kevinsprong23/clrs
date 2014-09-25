@@ -5,3 +5,4 @@
 *.csv
 .Rhistory
 .RData
+*.R
