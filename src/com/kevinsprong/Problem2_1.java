@@ -68,14 +68,14 @@ public class Problem2_1 {
 		System.out.println(Arrays.toString(array));
 		
 		// now tune value of arraySizeThresh empirically
-		int[] insertionThresh = {1,2,5,10,25,50,75,100,200,300,400,500,600,700,800,900,1000};
+		int[] insertionThresh = {1,2,4,8,16,32,64,128,256,512,1024};
 		int arraySize = 1000000;
-		int nReps = 100;
+		int nReps = 30;
 		
 		BufferedWriter bw = null;
 		try {
 			bw = new BufferedWriter(new FileWriter(
-					new File("sort_times_p2-1.csv")));
+					new File("sort_times_p2-1.csv"), false));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
