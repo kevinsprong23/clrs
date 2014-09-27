@@ -14,8 +14,8 @@ public class MergeSort {
 		int n1 = q - p + 1;
 		int n2 = r - q;
 		
-		// in real merge sort these would be a single array with size equal to A
-		// but this is the Cormen et. al implementation, so yeah.
+		// this is still only O(N) space since merge gets called last in the 
+		// recursion, but optimized implementations use one copy passed around
 		int[] L = new int[n1+1];
 		int[] R = new int[n2+1];
 		
