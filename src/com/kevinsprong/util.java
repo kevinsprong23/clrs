@@ -10,6 +10,13 @@ public class util {
 		}
 	}
 	
+	public static void fillWithZeroMeanInts(int[] array) {
+		Random rnd = new Random();
+		for (int i = 0; i < array.length; i++) {
+			array[i] = rnd.nextInt(array.length*4) - array.length*2;
+		}
+	}
+	
 	public static int[] deepCopy(int[] array) {
 		int[] copy = new int[array.length];
 		for (int i = 0; i < array.length; i++) {
