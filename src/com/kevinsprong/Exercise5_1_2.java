@@ -3,7 +3,7 @@ package com.kevinsprong;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Exercises5_1 {
+public class Exercise5_1_2 {
 	// 5.1-2
 	private static int random(int a, int b) {
 		Random rand = new Random();
@@ -15,25 +15,25 @@ public class Exercises5_1 {
 		int updown, mid, rounddir;
 		while (a < b) {
 			updown = rand.nextInt(2);
-			// see if range is odd or even;
-			// if odd, rand which way to send middle element
-			rounddir = ((b - a) % 2 == 0) ? rand.nextInt(2) : 0;
-				
-			mid = (b + a) / 2 + rounddir;
-			if (updown == 0) {
-				b = mid;
-			} else {
-				a = mid;
-			}
+			mid = (b + a) / 2;
 			
+			// if odd, need to see which way to count middle element
+			rounddir = ((b - a) % 2 == 1) ? rand.nextInt(2) : 0;
+			
+			// iterative binary search, to keep same Random() instance
+			if (updown == 0) {
+				b = mid - rounddir;
+			} else {
+				a = mid + 1 - rounddir;
+			}
 		}
 		return a;
 	}
-	
+
 	public static void main(String[] args) {
-		int[] randArray = new int[20];
+		int[] randArray = new int[10];
 		for (int i = 0; i < randArray.length; i++) {
-			randArray[i] = random(10, 40);
+			randArray[i] = random(1, 3);
 		}
 		
 		System.out.println(Arrays.toString(randArray));
