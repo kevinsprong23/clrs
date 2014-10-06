@@ -7,27 +7,27 @@ public class Exercises5_1 {
 	// 5.1-2
 	private static int random(int a, int b) {
 		Random rand = new Random();
-		// use rand.nextInt(1) as Random(0, 1) function in CLRS
+		// use rand.nextInt(2) as Random(0, 1) function in CLRS
 		
 		// I think we can binary search this
 		// start with range [a, b], call random(0,1)
 		// if 0, search bottom half, if 1, search top half
-		int updown, mid;
+		int updown, mid, rounddir;
 		while (a < b) {
-			updown = rand.nextInt(1);
+			updown = rand.nextInt(2);
 			// see if range is odd or even;
-			if ((b - a) % 2 == 0) {  // odd, since inclusive
+			// if odd, rand which way to send middle element
+			rounddir = ((b - a) % 2 == 0) ? rand.nextInt(2) : 0;
 				
-			} else {  // even is easier
-				mid = (b - a) / 2;
-				if (updown == 0) {
-					b = mid;
-				} else {
-					a = mid;
-				}
+			mid = (b + a) / 2 + rounddir;
+			if (updown == 0) {
+				b = mid;
+			} else {
+				a = mid;
 			}
 			
 		}
+		return a;
 	}
 	
 	public static void main(String[] args) {
