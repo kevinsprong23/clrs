@@ -30,6 +30,7 @@ public class Exercise5_1_3 {
 		for (int i = 0; i < unbiasedInts.length; i++) {
 			unbiasedInts[i] = unbiasedRandom(p);
 		}
+		System.out.print("Unbiased ints: ");
 		System.out.println(Arrays.toString(unbiasedInts));
 	}
 }

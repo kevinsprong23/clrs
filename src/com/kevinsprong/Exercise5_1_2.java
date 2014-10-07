@@ -24,11 +24,11 @@ public class Exercise5_1_2 {
 	}
 
 	public static void main(String[] args) {
-		int[] randArray = new int[300];
+		int[] randArray = new int[30];
 		for (int i = 0; i < randArray.length; i++) {
 			randArray[i] = random(1, 3);
 		}
-		
+		System.out.print("Random Integers: ");
 		System.out.println(Arrays.toString(randArray));
 		
 	}
