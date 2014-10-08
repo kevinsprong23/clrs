@@ -3,6 +3,7 @@ package com.kevinsprong;
 import java.util.Arrays;
 
 public class FindMaxSubarray {
+	// directly from Cormen et. al, p. 71
     public static int[] findMaxCrossingSubarray(int[] array, 
     		int low, int mid, int high) {
     	int[] result = {0,0,0};
@@ -34,6 +35,7 @@ public class FindMaxSubarray {
     	return result;
     }
     
+    // directly from Cormen et. al, p. 72
     public static int[] findMaximumSubarray(int[] A, int low, int high) {
     	if (low == high) {
     		return new int[]{low, high, A[low]};
@@ -42,7 +44,7 @@ public class FindMaxSubarray {
     	// set mid in a way that avoids overflow
     	int mid = low + (int) Math.floor((high-low)/2);
     	
-    	int[] resultLeft = findMaximumSubarray(A,low,mid);
+    	int[] resultLeft = findMaximumSubarray(A, low, mid);
     	int[] resultRight = findMaximumSubarray(A, mid+1, high);
     	int[] resultCross = findMaxCrossingSubarray(A, low, mid, high);
     	
