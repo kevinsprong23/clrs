@@ -26,8 +26,7 @@ public class Problem2_4 {
 		
 		int inversions = 0;
 		
-		// in real merge sort these would be a single array with size equal to A
-		// but this is the Cormen et. al implementation, so yeah.
+		// the Cormen et. al implementation
 		int[] L = new int[n1+1];
 		int[] R = new int[n2+1];
 		

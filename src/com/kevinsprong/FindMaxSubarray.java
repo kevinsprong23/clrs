@@ -69,7 +69,10 @@ public class FindMaxSubarray {
     	util.fillWithZeroMeanInts(array);
     	int[] maxSubarray = findMaximumSubarray(array);
     	
+    	System.out.print("Test array: ");
     	System.out.println(Arrays.toString(array));
+    	
+    	System.out.print("Max subarray - start, end, val: ");
     	System.out.println(Arrays.toString(maxSubarray));
     	
     }

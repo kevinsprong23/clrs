@@ -30,4 +30,12 @@ public class util {
 		array[j] = array[i];
 		array[i] = temp;
 	}
+	
+	// log 2 function
+	public static double lg(double a) {
+		return Math.log(a) / Math.log(2);
+	}
+	public static double lg(int a) {
+		return Math.log(a) / Math.log(2);
+	}
 }

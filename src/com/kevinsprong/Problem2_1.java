@@ -68,6 +68,7 @@ public class Problem2_1 {
 		System.out.println(Arrays.toString(array));
 		
 		// now tune value of arraySizeThresh empirically
+		System.out.println("Tuning insertion sort thresh");
 		int[] insertionThresh = {1,2,4,8,16,32,64,128,256,512,1024};
 		int arraySize = 1000000;
 		int nReps = 30;

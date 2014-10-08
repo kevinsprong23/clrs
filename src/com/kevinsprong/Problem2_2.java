@@ -20,7 +20,10 @@ public class Problem2_2 {
 		int[] array = new int[20];
 		util.fillWithRandomInts(array);
 		
+		System.out.print("Test array: ");
 		System.out.println(Arrays.toString(array));
+		
+		System.out.print("Bubble sorted: ");
 		bubbleSort(array);
 		System.out.println(Arrays.toString(array));
 	}
