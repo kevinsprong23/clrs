@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MergeSort {
 	/**
-	 * Merge two sorted sublists into a single list in place
+	 * Merge two sorted sublists into a single list
 	 * @param A a list containing two sorted sublists
 	 * @param p start index of first list
 	 * @param q end index of first list
