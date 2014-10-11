@@ -110,15 +110,20 @@ public class MergeSort {
 		System.out.println("Merge test");
 		int[] array = {1,5,7,9,11,23,45,67,2,3,4,5,6,7,8};
 		int p = 0, q = 7, r = array.length - 1;
+		System.out.print("Test array: ");
 		System.out.println(Arrays.toString(array));
+		
+		System.out.print("Merged: ");
 		merge(array, p, q, r);
 		System.out.println(Arrays.toString(array));
 		
 		System.out.println("\nMerge Sort test");
 		array = new int[20];
 		util.fillWithRandomInts(array);
+		System.out.print("Test array: ");
 		System.out.println(Arrays.toString(array));
 		mergeSort(array);
+		System.out.print("Sorted: ");
 		System.out.println(Arrays.toString(array));
 	}
 }

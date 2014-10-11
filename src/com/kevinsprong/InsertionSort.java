@@ -34,9 +34,14 @@ public class InsertionSort {
 		int[] array = new int[20];
 		util.fillWithRandomInts(array);
 		
+		System.out.print("Test array: ");
 		System.out.println(Arrays.toString(array));
+		
+		System.out.print("Sorted: ");
 		insertionSort(array);
 		System.out.println(Arrays.toString(array));
+		
+		System.out.print("Reverse Sorted: ");
 		insertionSortDec(array);
 		System.out.println(Arrays.toString(array));
 	}
