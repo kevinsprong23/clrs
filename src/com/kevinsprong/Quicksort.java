@@ -1,21 +1,23 @@
 package com.kevinsprong;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Quicksort {
-	public static int partition(int[] A, int p, int r) {
-		// choose a pivot
-		int pivIdx = p + (r - p) / 2;
-		int pivVal = A[pivIdx];
+	public static int partition(int[] A, int p, int r, Random rand) {
+		// permute A[r] with a random element
+		int idx = rand.nextInt(r - p + 1) + p;
+		util.swap(A,  idx, r);
 		
-		// temporarily swap pivot and last val
-		util.swap(A, pivIdx, r);
+		// choose a pivot
+		int pivVal = A[r];
 		
 		// keep track of top idx of filtered vals
 		int q = p;
+		
 		// do the filtering
 		for (int i = p; i < r; i++) {
-			if (A[i] < pivVal) {
+			if (A[i] <= pivVal) {
 				util.swap(A, i, q);
 				q++;
 			}
@@ -24,17 +26,18 @@ public class Quicksort {
 		return q;
 	}
 	
-	public static void quicksort(int[] A, int p, int r) {
+	public static void quicksort(int[] A, int p, int r, Random rand) {
 		if (p < r) {
-			int q = partition(A, p, r);
-			quicksort(A, p, q);
-			quicksort(A, q+1, r);
+			int q = partition(A, p, r, rand);
+			quicksort(A, p, q-1, rand);
+			quicksort(A, q+1, r, rand);
 		}
 	}
 	
 	public static void quicksort(int[] A) {
+		Random rand = new Random();
 		if (A.length > 1) {
-			quicksort(A, 0, A.length -1);
+			quicksort(A, 0, A.length -1, rand);
 		}
 	}
 	
