@@ -27,7 +27,7 @@ public class RadixSort {
 			for (int a : A) {
 				int tmp = a / divisor;
 				int sig = (tmp % RADIX);
-				buckets[sig].add(a);
+				buckets[sig].add(a);  // stable sort
 				// see if we have more sig digits to process
 				if (maxDigits && tmp > RADIX) {
 					maxDigits = false;
