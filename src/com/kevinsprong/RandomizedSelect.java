@@ -3,6 +3,7 @@ package com.kevinsprong;
 import java.util.Arrays;
 import java.util.Random;
 
+// Find the i'th smallest element in an array in O(n*log(n)) ala quicksort
 public class RandomizedSelect {
 	public static int partition(int[] A, int p, int r, Random rand) {
 		// permute A[r] with a random element

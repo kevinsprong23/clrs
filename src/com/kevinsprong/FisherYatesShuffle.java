@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class FisherYatesShuffle {
-	// recursively print a naive shuffle starting at stIdx
+	// recursively print a shuffle starting at stIdx
 	public static void printFYShuffle(int[] array, int stIdx, 
 			ArrayList<String> out) {
 		if (stIdx == array.length) {

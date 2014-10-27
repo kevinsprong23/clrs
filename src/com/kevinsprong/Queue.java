@@ -2,18 +2,20 @@ package com.kevinsprong;
 
 import java.util.Arrays;
 
+// class for a simple array-backed queue of integers
 public class Queue {
-	// class for a simple array-backed queue of integers
 
 	private int[] array;
 	private int head, tail;
 
+	// constructor
 	public Queue(int n) {
 		this.array = new int[n];
 		this.head = 0;
 		this.tail = 0;
 	}
 	
+	// methods
 	private int increment(int n) {
 		return (n == array.length - 1) ? 0 : n + 1;
 	}

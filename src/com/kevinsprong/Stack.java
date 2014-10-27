@@ -2,17 +2,19 @@ package com.kevinsprong;
 
 import java.util.Arrays;
 
+// class for a simple array-backed stack of integers
 public class Stack {
-	// class for a simple array-backed stack of integers
 	
 	private int[] array;
 	private int top;
 	
+	// constructor
 	public Stack(int n) {
 		this.array = new int[n];
 		this.top = -1;
 	}
 	
+	// methods
 	public int size() {
 		return top + 1;
 	}

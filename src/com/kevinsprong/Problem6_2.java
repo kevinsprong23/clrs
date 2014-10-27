@@ -14,7 +14,6 @@ public class Problem6_2 {
 	// heap operations from earlier in the chapter
 	// methods to get index of the parent or left/right child
 	// of the node at index i
-	@SuppressWarnings("unused")
 	private static int parentIdx(int i, int d) {
 		return (i - 1) / d;  // no need for Math.floor; integer div.
 	}

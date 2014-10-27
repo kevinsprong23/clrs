@@ -13,7 +13,6 @@ public class CountingSort {
 		for (int i = 0; i < C.length; i++) {
 			C[i] = 0;
 		}
-		
 		for (int i = 0; i < A.length; i++) {
 			C[A[i]]++;
 		}
@@ -28,8 +27,6 @@ public class CountingSort {
 			B[C[A[j]] - 1] = A[j];  // -1 here to jive w/ CLRS' 1-indexing
 			C[A[j]]--;
 		}
-		
-		
 		return B;
 	}
 	

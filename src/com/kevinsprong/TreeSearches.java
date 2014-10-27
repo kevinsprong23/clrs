@@ -1,5 +1,6 @@
 package com.kevinsprong;
 
+// class to run basic examples of binary tree algorithms
 public class TreeSearches {
 	public static void main(String[] args) {
 		// make a tree manually
