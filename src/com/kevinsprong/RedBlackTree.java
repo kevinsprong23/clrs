@@ -12,6 +12,22 @@ public class RedBlackTree extends BinarySearchTree {
 		super(null);
 	}
 	
+	// find the Node with min value in a tree
+	public RBNode treeMin(RBNode x) {
+		while (x.left != nil) {
+			x = x.left;
+		}
+		return x;
+	}
+
+	// overloaded
+	@Override
+	public RBNode treeMin() {
+		return treeMin(root);
+	}
+
+	
+	
 	private void leftRotate(RBNode node) {
 		RBNode y = node.right;
 		node.right = y.left;
@@ -87,7 +103,7 @@ public class RedBlackTree extends BinarySearchTree {
 				if (y.color == Color.RED) {
 					z.parent.color = Color.BLACK;
 					y.color = Color.BLACK;
-					z.parent.parent.color = Color.BLACK;
+					z.parent.parent.color = Color.RED;
 					z = z.parent.parent;
 				} else {
 					if (z == z.parent.right) {
@@ -103,7 +119,7 @@ public class RedBlackTree extends BinarySearchTree {
 				if (y.color == Color.RED) {
 					z.parent.color = Color.BLACK;
 					y.color = Color.BLACK;
-					z.parent.parent.color = Color.BLACK;
+					z.parent.parent.color = Color.RED;
 					z = z.parent.parent;
 				} else {
 					if (z == z.parent.left) {
@@ -142,12 +158,12 @@ public class RedBlackTree extends BinarySearchTree {
 		RBNode x;
 		if (z.left == nil) {
 			x = z.right;
-			transplant(z, x);
+			transplant(z, z.right);
 		} else if (z.right == nil) {
 			x = z.left;
-			transplant(z, x);
+			transplant(z, z.left);
 		} else {
-			y = (RBNode) treeMin(z.right);
+			y = treeMin(z.right);
 			yOrigColor = y.color;
 			x = y.right;
 			if (y.parent == z) {
@@ -220,5 +236,18 @@ public class RedBlackTree extends BinarySearchTree {
 			}
 		}
 		x.color = Color.BLACK;
+	}
+	
+	// in-order print of a tree
+	public void inorderPrint(RBNode n) {
+		if (n != nil) {
+			inorderPrint(n.left);
+			System.out.println(n.key);
+			inorderPrint(n.right);
+		}
+	}
+	// overload to call on root
+	public void inorderPrint() {
+		inorderPrint(root);
 	}
 }

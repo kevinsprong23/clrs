@@ -14,6 +14,11 @@ public class RBNode extends Node {
 		color = c;
 	}
 	
+	public RBNode(int k) {
+		super(k);
+		color = Color.RED;
+	}
+	
 	// constructor for conversion of existing node
 	public RBNode(Node n) {
 		super(n.key);
