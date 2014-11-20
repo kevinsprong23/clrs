@@ -4,8 +4,28 @@ public class BinarySearchTree {
 	
 	// root as instance variable
 	Node root;
+	// constructors
 	public BinarySearchTree(Node n) {
 		root = n;
+	}
+	public BinarySearchTree() {
+		root = null;
+	}
+	
+	// compute the height
+	public int treeHeight(Node n) {
+		if (n.left == null && n.right == null) {
+			return 0;
+		} else if (n.left == null) {
+			return 1 + treeHeight(n.right);
+		} else if (n.right == null) {
+			return 1 + treeHeight(n.left);
+		} else {
+			return 1 + Math.max(treeHeight(n.left), treeHeight(n.right));
+		}
+	}
+	public int treeHeight() {
+		return treeHeight(root);
 	}
 	
 	// in-order print of a tree

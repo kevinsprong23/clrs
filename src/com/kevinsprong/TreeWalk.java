@@ -28,5 +28,9 @@ public class TreeWalk {
 		System.out.println("Post-order: ");
 		tree.postorderPrint();
 		System.out.println();
+		
+		System.out.println("Tree height: ");
+		System.out.println(tree.treeHeight());
+		System.out.println();
 	}
 }

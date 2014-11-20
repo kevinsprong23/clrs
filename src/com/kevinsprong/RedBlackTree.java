@@ -26,8 +26,23 @@ public class RedBlackTree extends BinarySearchTree {
 		return treeMin(root);
 	}
 
-	
-	
+	// compute the height
+	public int treeHeight(RBNode n) {
+		if (n.left == nil && n.right == nil) {
+			return 0;
+		} else if (n.left == nil) {
+			return 1 + treeHeight(n.right);
+		} else if (n.right == nil) {
+			return 1 + treeHeight(n.left);
+		} else {
+			return 1 + Math.max(treeHeight(n.left), treeHeight(n.right));
+		}
+	}
+	@Override
+	public int treeHeight() {
+		return treeHeight(root);
+	}
+
 	private void leftRotate(RBNode node) {
 		RBNode y = node.right;
 		node.right = y.left;
