@@ -60,35 +60,29 @@ public class BinarySearchTree {
 	}
 	
 	// find the Node with min value in a tree
-	public Node treeMin() {
-		Node x = root;
-		while (x.left != null) {
-			x = x.left;
-		}
-		return x;
-	}
-	// overloaded
 	public Node treeMin(Node x) {
 		while (x.left != null) {
 			x = x.left;
 		}
 		return x;
 	}
-
-	// find the Node with max value in a tree
-	public Node treeMax() {
-		Node x = root;
-		while (x.right != null) {
-			x = x.right;
-		}
-		return x;
-	}
+	
 	// overloaded
+	public Node treeMin() {
+		return treeMin(root);
+	}
+	
+	// find the Node with max value in a tree
 	public Node treeMax(Node x) {
 		while (x.right != null) {
 			x = x.right;
 		}
 		return x;
+	}
+	
+	// overloaded
+	public Node treeMax() {
+		return treeMax(root);
 	}
 	
 	// find the successor of a given node
